@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+  <!-- CSS Section -->
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel='stylesheet' href='/Content/app.css' />
+  <script src="/chart.js/dist/chart.min.js"></script>
+</head>
+
+<body style="background-color: rgba(75, 241, 249, 0.907);">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+    <tr><img src=" ../Assets/images/RK.jpeg" height="50px" /></tr>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+        <!-- <h1><font color="white">Welcome to COMP229 Group 6 Survey Web Application</font></h1> -->
+  
+       
+                          <% if (title=="Surveys" ){ %>
+                            <li class="nav-item-s">
+                              <a style="color: #ce3535df;" class="nav-link popup2" href="/survey" style=><i
+                                  class="fas fa-poll"></i> Surveys </a>
+                            </li>
+                            <% } else { %>
+                              <li class="nav-item-s">
+                                <a class="nav-link popup2" style="color: white;" href="/survey"><i
+                                    class="fas fa-poll"></i> Surveys </a>
+                              </li>
+                              <% } %>
+  
+  
+  
+  
+                                <% if(typeof userId=='string' && userId) {%>
+                                  <% if (title=="My Surveys" ){ %>
+                                    <li class="nav-item-s">
+                                      <a class="nav-link popup2" style="color: #ce3535df;" href="survey/submitted"><i
+                                          class="fas fa-user"></i> My Surveys </a>
+                                    </li>
+                                    <% } else { %>
+                                      <li class="nav-item-s">
+                                        <a class="nav-link popup2" style="color: white;" href="survey/submitted"><i
+                                            class="fas fa-user"></i> My Surveys </a>
+                                      </li>
+                                      <% }%>
+                                        <li class="nav-item-s">
+                                          <a class="nav-link welcome" style="color: white;"> Welcome, <%= userId %></a>
+                                        </li>
+                                        <li class="nav-item-s">
+                                          <a class="nav-link popup2" style="color: red;" href="/logout"> Logout <i
+                                              class="fas fa-lg fa-sign-out-alt"></i></a>
+                                        </li>
+  
+                                        <% } else {%>
+                                          <% if (title=="Login" ){ %>
+                                            <li class="nav-item-s">
+                                              <a style="color: #ce3535df" class="nav-link popup2" href="/login">
+                                                Login <i class="fas fa-lg fa-sign-in-alt"></i></a>
+                                            </li>
+                                            <% } else { %>
+                                              <li class="nav-item-s">
+                                                <a class="nav-link popup2" style="color: white;" href="/login">
+                                                  Login <i class="fas fa-lg fa-sign-in-alt"></i></a>
+                                              </li>
+                                              <% } %>
+                                                <% } %>
+  
+      </ul>
+    </div>
+    </div>
+  </nav>
+    <!-- Main Content -->
+    <div class='container-fluid'>
+      <div class="row outerDiv">
+        <div class="col-xs-3 col-md-2 imageDiv d-none d-lg-block">
+          <img class="img-responsive" style="margin-top: 50%" id="swoosh" src="../Assets/images/sideimagel.png">
+        </div>
+        <div class="col">
+          <main class="container" style="background-color: black;">
+            <div class="row">
+              <div class="col-md">
+                <!-- Home Page  -->
+                <% if (title=="Home" ){ %>
+
+                  <a class="btn btn-primary" href="/register">Sign Up Now</a>
+                  <div class="container-fluid py-5">
+
+                    <!--project detail page-->
+                    <% } else if (title=="Projects" ){%>
+                      <h2 class="display-4 fw-bold">Project Details</h2>
+                      <h3>TO DO</h3>
+                      <!-- Survey page-->
+                      <% } else if (title=="Active Survey" ){%>
+                        <!-- login page-->
+                        <% } else if (title=="Login" ) {%>
+                          <h2 class="display-4 fw-bold">Project Details</h2>
+                          <h3>TO DO</h3>
+                          <% } %>
+                  </div>
+              </div>
+
+              <!-- If you click the div, you are directed to survey list page. -->
+              <div class="container px-6">
+                <div class="row gx-6">
+                  <div style="margin-bottom: 30px; cursor: pointer; cursor: hand;" class="col"
+                    onclick="location.href='/survey-list';">
+                    <div class="p-4 cl c1">
+                      Step 1
+                      <h3 class="pt-5">Survey List.</h3>
+                      <h1 style="text-align: right"><i class="fas fa-list"></i></h1>
+                    </div>
+                  </div>
+
+                  <% if(typeof userId=='string' && userId) {%>
+                    <div style="margin-bottom: 30px; cursor: pointer; cursor: hand;" class="col"
+                      onclick="location.href='/survey-list';">
+                      <div class="p-4 cl c2">
+                        Step 2
+                        <h3 class="pt-5"> Fill Up Surveys.</h3>
+                        <h1 style="text-align: right"><i class="fas fa-user-edit"></i></h1>
+                      </div>
+                    </div>
+                    <% } else { %>
+                      <div style="margin-bottom: 30px; cursor: pointer; cursor: hand;" class="col"
+                        onclick="location.href='/login';">
+                        <div class="p-4 cl c2">
+                          Step 2
+                          <h3 class="pt-5"> Fill Up Surveys.</h3>
+                          <h1 style="text-align: right"><i class="fas fa-user-edit"></i></h1>
+                        </div>
+                      </div>
+                      <% } %>
+
+                </div>
+                <div style="margin-bottom: 30px; cursor: pointer; cursor: hand;" class="col">
+                  <div class="p-4 cl c3">
+                    Step 3
+                    <h3 class="pt-5">Get Results.</h3>
+                    <h1 style="text-align: right"><i class="fas fa-gift"></i></h1>
+                  </div>
+                </div>
+              </div>
+          </main>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+<footer class="page-footer sticky-bottom font-small blue pt-4" style="margin-top: 100px; text-align: center;">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row -->
+    <div class="row justify-content-evenly">
+
+
+
+
+      <!-- Grid column -->
+      <div class="col align-self-start">
+
+        <!-- Links -->
+        <h5 style="color: white; font-family: Courier;" class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/survey">Surveys</a>
+          </li>
+          <li>
+            <a href="/mypage">My Surveys</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col align-self-end">
+
+        <!-- Links -->
+        <h5 style="color: rgb(4, 76, 84); font-variant: Courier; text-align: left; margin-left: 10px;"
+          class="text-uppercase">Connect with us</h5>
+
+
+
+      </div>
+      <!-- Grid column -->
+
+
+
+      <!-- Grid row -->
+
+      <div class="footer-copyright text-center py-3">
+        <p style="color: rgb(4, 76, 84);">&copy; Copyright 2022. All Rights reserved. Developed by <a
+            href="/group">Group
+            04</a></p>
+      </div>
+
+    </div>
+    <!-- Footer Links -->
+
+
+
+
+</footer>
+<!-- Footer -->
+
+      <!-- Script Section -->
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/Scripts/app.js"></script>
+<script src="/chart.js/dist/chart.js"></script>
+
+</body>
+
+</html>

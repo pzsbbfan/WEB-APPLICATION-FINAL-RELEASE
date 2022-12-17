@@ -1,0 +1,65 @@
+
+
+        <!-- Content for the Add page -->
+        <div class='container-fluid'>
+            <div class="row outerDiv">
+                <div class="col-xs-3 col-md-2 imageDiv d-none d-lg-block">
+                    <img class="img-responsive" style="margin-top: 50%" id="swoosh"
+                        src="../Assets/images/sideimagel.png">
+                </div>
+                <div class="col">
+                    <div class="container">
+                        <% if(messages.length> 0) {%>
+                            <div class="alert alert-danger">
+                                <%= messages %>
+                            </div>
+                            <% } %>
+
+                                <div class="row justify-content-center">
+
+
+                                    <div class="col-6" style="margin-top:75px;">
+
+
+
+
+                                        <p
+                                            style="font-family: Courier; font-size:200%; text-align:center; color: #1b7ced;">
+                                            Please Login</p>
+
+                                        <form method="POST" autocomplete="off">
+
+                                            <fieldset class="form-group" style="margin-bottom:15px;">
+                                                <input type="text" class="form-control" id="username"
+                                                    placeholder="Enter username" name="username" required autofocus>
+                                            </fieldset>
+
+                                            <fieldset class="form-group" style="margin-bottom:15px;">
+
+                                                <input type="password" class="form-control" id="password"
+                                                    placeholder="Enter password" name="password" required>
+                                            </fieldset>
+
+                                            <p style="color: rgb(45, 138, 141);">Don't have an account? <a
+                                                    href="/register">Join Now</a></p>
+
+                                            <fieldset class="form-group text-right">
+                                                <button type="submit" class="btn btn-primary">Login</button>
+                                                <a href="/"><input type="button" class="btn btn-warning"
+                                                        value="Cancel"></a>
+
+                                            </fieldset>
+                                        </form>
+
+
+
+
+
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
