@@ -40,4 +40,3 @@ testem.log
 # System filest -m 
 .DS_Store
 Thumbs.db
-client
