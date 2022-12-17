@@ -10,7 +10,7 @@ Student name: Zhikun Fan
 StudentID: 301250119
 Date 09/30/2022
 */
-var app = require('../server/config/app');
+var app = require('./server/config/app');
 var debug = require('debug')('wee03-part2:server');
 var http = require('http');
 
