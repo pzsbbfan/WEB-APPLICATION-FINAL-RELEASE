@@ -13,13 +13,13 @@ router.get('/home', indexController.displayHomePage);
 
 
 /* GET Route for displaying the Login page */
-router.get('/login', indexController.displayLoginPage);
+//router.get('/login', indexController.displayLoginPage);
 
 /* POST Route for processing the Login page */
 router.post('/login', indexController.processLoginPage);
 
 /* GET Route for displaying the Register page */
-router.get('/register', indexController.displayRegisterPage);
+//router.get('/register', indexController.displayRegisterPage);
 
 /* POST Route for processing the register page */
 router.post('/register', indexController.processRegisterPage);
@@ -28,6 +28,6 @@ router.post('/register', indexController.processRegisterPage);
 router.get('/logout', indexController.performLogout);
 
 /* GET Route for displaying the MyPage page */
-router.get('/mypage', indexController.displayMyPagePage);
+//router.get('/mypage', indexController.displayMyPagePage);
 
 module.exports = router;
